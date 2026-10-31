@@ -1,7 +1,7 @@
 Fotos TEMPORALES de Unsplash (Licencia Unsplash, uso libre). Reemplazar por fotos reales de SUN.
 hero-portatil.jpg      https://images.unsplash.com/photo-1531297484001-80022131f5a1
 portatiles.jpg         https://images.unsplash.com/photo-1542393545-10f5cde2c810
-escritorio.jpg         https://images.unsplash.com/photo-1593640408182-31c70c8268f5
+escritorio.jpg         https://images.unsplash.com/photo-1593640495253-23196b27a87f
 impresoras.jpg         https://images.unsplash.com/photo-1612815154858-60aa4c59eaa6
 servicio-tecnico.jpg   https://images.unsplash.com/photo-1788025487883-c59e1f8edcaa
 redes.jpg              https://images.unsplash.com/photo-1544197150-b99a580bb7a8
