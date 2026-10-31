@@ -10,9 +10,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/sun.css">
+<link rel="stylesheet" href="assets/sun.css?v=4">
 <script defer src="assets/site.js"></script>
-<script defer src="assets/sun-motion.js"></script>
+<script defer src="assets/sun-motion.js?v=4"></script>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -57,7 +57,7 @@
   <!-- Hero -->
   <section class="hero">
     <!-- Fondo vivo: circuitos con pulsos de luz -->
-    <svg class="circuits" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <svg class="circuits" viewBox="0 0 1440 720" fill="none" stroke="#1b2b48" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <defs>
         <g id="cx">
           <path d="M0 140H180L220 180H360"/><path d="M0 205H120L160 245H300"/>
@@ -65,7 +65,7 @@
           <path d="M0 425H200L240 385H335"/><path d="M0 485H150L190 525H285"/>
           <path d="M40 565H260L300 605H385"/><path d="M0 250H60"/>
         </g>
-        <g id="cd">
+        <g id="cd" fill="#24395e" stroke="none">
           <circle cx="360" cy="180" r="3"/><circle cx="300" cy="245" r="3"/><circle cx="410" cy="320" r="3"/>
           <circle cx="95" cy="360" r="3"/><circle cx="335" cy="385" r="3"/><circle cx="285" cy="525" r="3"/>
           <circle cx="385" cy="605" r="3"/><circle cx="60" cy="250" r="3"/>
@@ -87,7 +87,7 @@
     <div class="wrap">
       <!-- Logo SUN animado: el anillo se dibuja y la línea se enciende -->
       <div class="power" aria-hidden="true">
-        <svg viewBox="0 0 100 100">
+        <svg viewBox="0 0 100 100" width="84" height="84" fill="none">
           <defs>
             <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
               <stop offset="0" stop-color="#f4f7fb"/><stop offset=".45" stop-color="#9aa6b6"/>
