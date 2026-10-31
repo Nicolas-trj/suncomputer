@@ -10,9 +10,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/sun.css?v=4">
+<link rel="stylesheet" href="assets/sun.css?v=5">
 <script defer src="assets/site.js"></script>
-<script defer src="assets/sun-motion.js?v=4"></script>
+<script defer src="assets/sun-motion.js?v=5"></script>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -55,7 +55,7 @@
 <main id="contenido">
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero hero-split">
     <!-- Fondo vivo: circuitos con pulsos de luz -->
     <svg class="circuits" viewBox="0 0 1440 720" fill="none" stroke="#1b2b48" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
       <defs>
@@ -84,7 +84,8 @@
         </g>
       </g>
     </svg>
-    <div class="wrap">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
       <!-- Logo SUN animado: el anillo se dibuja y la línea se enciende -->
       <div class="power" aria-hidden="true">
         <svg viewBox="0 0 100 100" width="84" height="84" fill="none">
@@ -111,8 +112,29 @@
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
         Asesoría cercana. Soluciones para tu operación.
       </p>
-      <div class="hero-visual reveal">
-        <img src="assets/img/hero-portatil.jpg" alt="Computador portátil encendido en un espacio oscuro" width="1600" height="1133">
+      </div>
+
+      <!-- Vitrina giratoria de equipos (fotos temporales sin fondo) -->
+      <div class="showcase reveal" style="--d:3" aria-roledescription="carrusel" aria-label="Equipos que ofrecemos">
+        <div class="spot" aria-hidden="true"></div>
+        <figure class="item" data-pos="center" data-label="Computadores portátiles">
+          <img src="assets/img/hero/portatil.webp" alt="Computador portátil" width="900" height="729">
+        </figure>
+        <figure class="item" data-pos="right" data-label="Computadores de escritorio">
+          <img src="assets/img/hero/pc.webp" alt="Computador de escritorio" width="900" height="894">
+        </figure>
+        <figure class="item" data-pos="left" data-label="Impresoras y consumibles">
+          <img src="assets/img/hero/impresora.webp" alt="Impresora multifuncional" width="661" height="577">
+        </figure>
+        <div class="floor" aria-hidden="true"></div>
+        <div class="showcase-bar">
+          <a class="showcase-label" href="productos/"><i aria-hidden="true"></i><span aria-live="polite">Computadores portátiles</span></a>
+          <div class="showcase-dots" role="group" aria-label="Elegir equipo">
+            <button type="button" aria-label="Computadores portátiles" aria-pressed="true"></button>
+            <button type="button" aria-label="Computadores de escritorio" aria-pressed="false"></button>
+            <button type="button" aria-label="Impresoras y consumibles" aria-pressed="false"></button>
+          </div>
+        </div>
       </div>
     </div>
   </section>

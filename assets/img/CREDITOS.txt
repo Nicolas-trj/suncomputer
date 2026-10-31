@@ -9,3 +9,6 @@ accesorios-teclado.jpg https://images.unsplash.com/photo-1636036824578-d0d300a4e
 tecnico-redes.jpg      https://images.unsplash.com/photo-1785682117029-86171f64c826
 accesorios.jpg         https://images.unsplash.com/photo-1577375729078-820d5283031c
 mouse.jpg              https://images.unsplash.com/photo-1722437697582-18710e8ebda9
+hero/portatil   (fondo quitado) https://images.unsplash.com/photo-1588872657578-7efd1f1555ed
+hero/pc         (fondo quitado) https://images.unsplash.com/photo-1738245494097-9b1e3971c3eb
+hero/impresora  (fondo quitado) https://images.unsplash.com/photo-1650094980833-7373de26feb6
