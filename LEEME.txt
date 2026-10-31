@@ -1,0 +1,18 @@
+SUN COMPUTER - Rediseño web (borrador local, NO publicado)
+==========================================================
+
+Estado: Fase 1 - solo la página de INICIO tiene el nuevo diseño.
+Las demás páginas (productos, servicios, etc.) siguen con el diseño viejo
+hasta que apruebes Inicio.
+
+Archivos nuevos o cambiados:
+  index.html          -> Inicio rediseñado (mismos textos y enlaces)
+  assets/sun.css      -> nuevo sistema de diseño
+Sin cambios: assets/site.js, assets/site.css, catalog.json, logos y otras páginas.
+_original/index.html  -> copia del Inicio anterior, para comparar.
+
+CÓMO VERLA EN TU COMPUTADOR
+Las rutas son relativas: funcionan en GitHub Pages, Live Server y el servidor.
+
+Opción fácil: en VS Code instala la extensión "Live Server", abre esta
+carpeta y haz clic en "Go Live".
