@@ -17,3 +17,4 @@ hero/gamer-teclado-mouse  ASUS TUF Gaming Combo K1 & M3 - asus.com
 redes-rack.jpg          https://images.unsplash.com/photo-1698668975271-2ba9a323be6b
 respaldo-electrico.jpg  https://images.unsplash.com/photo-1783419482520-2f8b80a40369
 licencias-seguridad.jpg https://images.unsplash.com/photo-1614064641938-3bbee52942c7
+software-codigo.jpg     https://images.unsplash.com/photo-1555949963-ff9fe0c870eb

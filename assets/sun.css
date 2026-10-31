@@ -500,6 +500,91 @@ footer { background: var(--void); border-top: 1px solid var(--hairline); color: 
   .filter-chip { flex: none; }
 }
 
+
+/* ---------- Componentes de páginas internas ---------- */
+.band.tight { padding-block: clamp(32px, 4vw, 56px); }
+
+/* Tarjeta destacada: foto + texto */
+.spotlight {
+  display: grid; grid-template-columns: 1fr 1fr; overflow: hidden;
+  background: var(--carbon); border: 1px solid var(--circuit); border-radius: 16px;
+}
+.spotlight-media { position: relative; min-height: 320px; }
+.spotlight-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.spotlight-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 55%, var(--carbon)); }
+.spotlight-body { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; padding: clamp(28px, 4vw, 56px); position: relative; z-index: 3; }
+.spotlight-body .kicker { margin: 0; }
+.spotlight-body .btn { margin-top: 8px; }
+
+/* Ícono en caja (estilo "workload card") */
+.feature-ico {
+  width: 48px; height: 48px; flex: none; display: grid; place-items: center;
+  border-radius: var(--r-btn); border: 1px solid var(--circuit); color: var(--led);
+  background: linear-gradient(180deg, rgba(0, 229, 255, .08), transparent);
+}
+.feature-ico svg { width: 22px; height: 22px; }
+
+/* Tarjetas de servicio / solución */
+.features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.features.two { grid-template-columns: repeat(2, 1fr); }
+.feature {
+  display: flex; flex-direction: column; padding: 32px; border-radius: var(--r-card);
+  background: var(--ground); border: 1px solid var(--hairline); overflow: hidden;
+  transition: border-color .3s ease-out, transform .4s var(--ease);
+}
+.feature:hover { border-color: var(--circuit); transform: translateY(-3px); }
+.feature-top { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+.feature .num { font: 500 12px/1 var(--mono); color: var(--muted); }
+.feature p { margin-top: 10px; font-size: 15px; flex: 1; }
+.feature .add-button { margin-top: 24px; }
+.checks { list-style: none; display: grid; gap: 10px; margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--hairline); }
+.checks li { display: flex; align-items: center; gap: 10px; font-size: 15px; color: var(--lead); }
+.checks svg { width: 16px; height: 16px; flex: none; color: var(--led); }
+
+/* Pasos del proceso (en banda clara) */
+.steps { list-style: none; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 48px; counter-reset: s; position: relative; }
+.steps::before { content: ""; position: absolute; left: 0; right: 0; top: 22px; height: 1px; background: #b9cde0; z-index: 0; }
+.step { position: relative; z-index: 1; }
+.step-n {
+  display: inline-grid; place-items: center; width: 44px; height: 44px; border-radius: 50%;
+  background: #06122a; color: var(--led); font: 500 13px/1 var(--mono); margin-bottom: 20px;
+  box-shadow: 0 0 0 6px var(--frost);
+}
+.band.frost .step p { margin-top: 8px; font-size: 15px; color: #3d4f66; }
+
+/* Aviso tipo terminal */
+.notice-body { display: flex; align-items: center; gap: 20px; padding: 24px 28px; }
+.notice-body > div { flex: 1; }
+.notice-body p { margin-top: 4px; font-size: 15px; }
+.notice-body .h3 { font-size: 20px; }
+
+/* Nosotros */
+.about { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+.about-text .lead { margin-top: 24px; }
+
+/* Llamado final en banda clara */
+.callout { text-align: center; display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.callout .h2 { max-width: 20ch; }
+.callout .lead { max-width: 52ch; color: #3d4f66; }
+.btn-dark { background: #06122a; color: var(--phosphor); border-radius: var(--r-pill); }
+.btn-dark:hover { background: var(--led); color: var(--void); }
+
+@media (max-width: 1040px) {
+  .features { grid-template-columns: repeat(2, 1fr); }
+  .steps { grid-template-columns: repeat(2, 1fr); row-gap: 36px; }
+  .steps::before { display: none; }
+}
+@media (max-width: 880px) {
+  .spotlight, .about { grid-template-columns: 1fr; }
+  .spotlight-media { min-height: 220px; }
+  .spotlight-media::after { background: linear-gradient(180deg, transparent 55%, var(--carbon)); }
+  .about { gap: 32px; }
+}
+@media (max-width: 620px) {
+  .features, .features.two, .steps { grid-template-columns: 1fr; }
+  .notice-body { flex-direction: column; align-items: flex-start; }
+}
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1040px) {
   .nav { gap: 20px; }
