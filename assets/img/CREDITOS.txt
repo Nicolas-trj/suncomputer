@@ -14,3 +14,6 @@ IM√ÅGENES OFICIALES DE FABRICANTE (usadas como revendedor; confirmar autorizaci√
 hero/asus-tuf             ASUS TUF Gaming A15 - asus.com
 hero/epson-ecotank        Epson EcoTank L3250 - epson.com.co (fondo quitado)
 hero/gamer-teclado-mouse  ASUS TUF Gaming Combo K1 & M3 - asus.com
+redes-rack.jpg          https://images.unsplash.com/photo-1698668975271-2ba9a323be6b
+respaldo-electrico.jpg  https://images.unsplash.com/photo-1783419482520-2f8b80a40369
+licencias-seguridad.jpg https://images.unsplash.com/photo-1614064641938-3bbee52942c7
