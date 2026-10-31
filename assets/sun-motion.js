@@ -36,7 +36,7 @@
       current = (i + items.length) % items.length;
       items.forEach((el, k) => {
         const rel = (k - current + items.length) % items.length;
-        el.dataset.pos = rel === 0 ? 'center' : rel === 1 ? 'right' : 'left';
+        el.dataset.pos = rel === 0 ? 'center' : rel === 1 ? 'right' : rel === items.length - 1 ? 'left' : 'back';
         el.setAttribute('aria-hidden', String(rel !== 0));
       });
       dots.forEach((d, k) => {

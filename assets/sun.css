@@ -395,6 +395,7 @@ footer { background: var(--void); border-top: 1px solid var(--hairline); color: 
 .item[data-pos="center"] img { animation: float 5s ease-in-out infinite; }
 .item[data-pos="left"]   { z-index: 1; opacity: .5; filter: brightness(.55) saturate(.8) blur(1px); transform: translateX(-118%) translateY(-10%) scale(.5); }
 .item[data-pos="right"]  { z-index: 1; opacity: .5; filter: brightness(.55) saturate(.8) blur(1px); transform: translateX(18%) translateY(-10%) scale(.5); }
+.item[data-pos="back"] { z-index: 0; opacity: 0; filter: brightness(.4) blur(3px); transform: translateX(-50%) translateY(-18%) scale(.35); }
 @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
 .showcase-bar { position: absolute; left: 0; right: 0; bottom: 2%; display: flex; align-items: center; justify-content: space-between; gap: 16px; z-index: 4; }
