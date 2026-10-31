@@ -585,6 +585,60 @@ footer { background: var(--void); border-top: 1px solid var(--hairline); color: 
   .notice-body { flex-direction: column; align-items: flex-start; }
 }
 
+
+/* ---------- Cotizar ---------- */
+.quote-layout { display: grid; grid-template-columns: .9fr 1.1fr; gap: 24px; align-items: start; }
+.quote-items { position: sticky; top: 88px; }
+.quote-inner { padding: 24px 28px 28px; display: grid; gap: 18px; }
+.quote-heading { display: flex; align-items: baseline; justify-content: space-between; padding-bottom: 16px; border-bottom: 1px solid var(--hairline); }
+.quote-heading span { font: 500 12px/1 var(--mono); color: var(--led); }
+.quote-items .empty-small { margin: 0; }
+.empty-big { display: grid; justify-items: center; gap: 10px; padding: 32px 24px; }
+.empty-big p { font-size: 15px; max-width: 32ch; }
+.quote-item { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--hairline); }
+.quote-item h3 { font: 500 16px/1.3 var(--display); color: var(--phosphor); }
+.quantity { display: flex; align-items: center; gap: 6px; flex: none; }
+.quantity > span { min-width: 28px; text-align: center; font: 500 14px/1 var(--mono); color: var(--phosphor); }
+.draft-control { min-width: 32px; height: 32px; padding: 0 10px; border-radius: var(--r-pill); border: 1px solid var(--circuit); color: var(--lead); font-size: 13px; }
+.draft-control:hover:not(:disabled) { border-color: var(--led); color: var(--phosphor); }
+.draft-control:disabled { opacity: .35; cursor: default; }
+.quote-items .chip { justify-self: start; }
+.quote-info { display: flex; gap: 12px; padding: 16px; border-radius: var(--r-card); background: var(--ground); font-size: 14px; }
+.quote-info svg { width: 18px; height: 18px; flex: none; color: var(--led); margin-top: 2px; }
+
+.quote-form { display: grid; gap: 20px; padding: clamp(24px, 3vw, 40px); border-radius: 16px; background: var(--ground); border: 1px solid var(--hairline); }
+.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.quote-form label { display: grid; gap: 8px; font-size: 14px; font-weight: 500; color: var(--lead); }
+.quote-form input, .quote-form textarea {
+  width: 100%; padding: 12px 14px; border-radius: var(--r-btn);
+  background: var(--void); border: 1px solid var(--circuit); color: var(--phosphor);
+  font: 400 15px/1.5 var(--ui); outline: 0; transition: border-color .3s ease-out, box-shadow .3s ease-out;
+}
+.quote-form textarea { resize: vertical; min-height: 140px; }
+.quote-form input:focus, .quote-form textarea:focus { border-color: var(--led); box-shadow: 0 0 0 3px var(--led-soft); }
+.quote-form ::placeholder { color: var(--muted); }
+.form-note { display: flex; gap: 10px; align-items: flex-start; font: 500 12px/1.6 var(--mono); color: var(--muted); }
+.form-note i { width: 6px; height: 6px; margin-top: 7px; flex: none; border-radius: 50%; background: #febc2e; }
+.quote-form .btn { justify-self: start; }
+
+/* ---------- Portal ---------- */
+.portal-card { display: flex; flex-direction: column; }
+.portal-body { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; padding: 28px; flex: 1; }
+.portal-body p { font-size: 15px; flex: 1; }
+.portal-head { display: flex; align-items: center; justify-content: space-between; width: 100%; margin-bottom: 8px; }
+.status { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; border-radius: var(--r-pill); border: 1px solid var(--circuit); font-size: 12px; font-weight: 500; color: var(--muted); }
+.status i { width: 7px; height: 7px; border-radius: 50%; background: #febc2e; }
+.status.on { color: var(--lead); }
+.status.on i { background: #28c840; box-shadow: 0 0 8px #28c840; }
+.portal-body .btn { margin-top: 8px; }
+.pending { margin-top: 8px; padding: 12px 20px; border-radius: var(--r-btn); border: 1px dashed var(--circuit); font-size: 14px; color: var(--muted); }
+
+@media (max-width: 960px) {
+  .quote-layout { grid-template-columns: 1fr; }
+  .quote-items { position: static; }
+}
+@media (max-width: 560px) { .form-grid { grid-template-columns: 1fr; } }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 1040px) {
   .nav { gap: 20px; }
