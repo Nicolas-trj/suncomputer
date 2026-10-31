@@ -16,3 +16,14 @@ Las rutas son relativas: funcionan en GitHub Pages, Live Server y el servidor.
 
 Opción fácil: en VS Code instala la extensión "Live Server", abre esta
 carpeta y haz clic en "Go Live".
+
+LOGOS SIN FONDO (PNG transparente) en assets/img/logo/
+  sun-logo-blanco.png                 para fondos oscuros, con circuitos
+  sun-logo-blanco-sin-circuitos.png   para fondos oscuros, limpio
+  sun-logo-color.png                  para fondos claros, con circuitos
+  sun-logo-color-sin-circuitos.png    para fondos claros, limpio
+  sun-simbolo.png                     solo el símbolo de encendido
+  sun-logo-web.png                    versión liviana usada en la web
+
+ANIMACIONES: assets/sun-motion.js + sección "Animaciones" de sun.css.
+Se desactivan solas si el visitante tiene activado "reducir movimiento".

@@ -12,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=JetBrains+Mono:wght@500&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/sun.css">
 <script defer src="assets/site.js"></script>
+<script defer src="assets/sun-motion.js"></script>
 </head>
 <body>
 <a class="skip" href="#contenido">Saltar al contenido</a>
@@ -29,7 +30,7 @@
 <header class="header">
   <div class="wrap">
     <a class="logo" href="./" aria-label="Sun Computer, inicio">
-      <img src="sun-logo-light.png" alt="Sun Computer — Innovación y Tecnología" width="466" height="230">
+      <img src="assets/img/logo/sun-logo-web.png" alt="Sun Computer — Innovación y Tecnología" width="520" height="201">
     </a>
     <nav class="nav" aria-label="Navegación principal">
       <a href="./" aria-current="page">Inicio</a>
@@ -55,17 +56,58 @@
 
   <!-- Hero -->
   <section class="hero">
+    <!-- Fondo vivo: circuitos con pulsos de luz -->
+    <svg class="circuits" viewBox="0 0 1440 720" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <defs>
+        <g id="cx">
+          <path d="M0 140H180L220 180H360"/><path d="M0 205H120L160 245H300"/>
+          <path d="M0 290H240L270 320H410"/><path d="M0 360H95"/>
+          <path d="M0 425H200L240 385H335"/><path d="M0 485H150L190 525H285"/>
+          <path d="M40 565H260L300 605H385"/><path d="M0 250H60"/>
+        </g>
+        <g id="cd">
+          <circle cx="360" cy="180" r="3"/><circle cx="300" cy="245" r="3"/><circle cx="410" cy="320" r="3"/>
+          <circle cx="95" cy="360" r="3"/><circle cx="335" cy="385" r="3"/><circle cx="285" cy="525" r="3"/>
+          <circle cx="385" cy="605" r="3"/><circle cx="60" cy="250" r="3"/>
+        </g>
+      </defs>
+      <g class="c-side"><use href="#cx" class="c-lines"/><use href="#cd" class="c-dots"/>
+        <g class="c-pulses">
+          <path pathLength="1000" style="--t:0s" d="M0 140H180L220 180H360"/><path pathLength="1000" style="--t:2.1s" d="M0 290H240L270 320H410"/>
+          <path pathLength="1000" style="--t:4.3s" d="M0 425H200L240 385H335"/><path pathLength="1000" style="--t:1.2s" d="M40 565H260L300 605H385"/>
+        </g>
+      </g>
+      <g class="c-side" transform="translate(1440 0) scale(-1 1)"><use href="#cx" class="c-lines"/><use href="#cd" class="c-dots"/>
+        <g class="c-pulses">
+          <path pathLength="1000" style="--t:3.2s" d="M0 205H120L160 245H300"/><path pathLength="1000" style="--t:0.7s" d="M0 485H150L190 525H285"/>
+          <path pathLength="1000" style="--t:5.1s" d="M0 290H240L270 320H410"/><path pathLength="1000" style="--t:2.6s" d="M0 140H180L220 180H360"/>
+        </g>
+      </g>
+    </svg>
     <div class="wrap">
-      <span class="kicker">Tu aliado en tecnología</span>
-      <h1 class="display">Tecnología que hace avanzar <span class="led">tu empresa.</span></h1>
-      <p class="lead">Equipos, soporte y software a la medida. Todo lo que necesitas para trabajar mejor, con un equipo que te acompaña.</p>
-      <div class="hero-actions">
+      <!-- Logo SUN animado: el anillo se dibuja y la línea se enciende -->
+      <div class="power" aria-hidden="true">
+        <svg viewBox="0 0 100 100">
+          <defs>
+            <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#f4f7fb"/><stop offset=".45" stop-color="#9aa6b6"/>
+              <stop offset=".7" stop-color="#e8edf3"/><stop offset="1" stop-color="#6d7a8c"/>
+            </linearGradient>
+          </defs>
+          <circle class="p-ring" cx="50" cy="54" r="36" pathLength="100" transform="rotate(-54 50 54)"/>
+          <line class="p-bar" x1="50" y1="10" x2="50" y2="46" pathLength="100"/>
+        </svg>
+      </div>
+      <span class="kicker reveal" style="--d:1">Tu aliado en tecnología</span>
+      <h1 class="display reveal" style="--d:2">Tecnología que hace avanzar <span class="led">tu empresa.</span></h1>
+      <p class="lead reveal" style="--d:3">Equipos, soporte y software a la medida. Todo lo que necesitas para trabajar mejor, con un equipo que te acompaña.</p>
+      <div class="hero-actions reveal" style="--d:4">
         <a class="btn btn-led" href="productos/">Explorar productos
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
         </a>
         <a class="btn btn-ghost" href="servicios/">Necesito soporte</a>
       </div>
-      <p class="hero-note">
+      <p class="hero-note reveal" style="--d:5">
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
         Asesoría cercana. Soluciones para tu operación.
       </p>
@@ -78,17 +120,17 @@
   <!-- Tres caminos -->
   <section class="paths" aria-label="Accesos rápidos">
     <div class="wrap paths-grid">
-      <a class="path" href="productos/">
+      <a class="path glow reveal" style="--d:0" href="productos/">
         <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg></span>
         <span><b>Equipa tu empresa</b><small>Productos y tecnología</small></span>
         <svg class="go" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
       </a>
-      <a class="path" href="servicios/">
+      <a class="path glow reveal" style="--d:1" href="servicios/">
         <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.106-3.105c.32-.322.863-.22.983.218a6 6 0 0 1-8.259 7.057l-7.91 7.91a1 1 0 0 1-2.999-3l7.91-7.91a6 6 0 0 1 7.057-8.259c.438.12.54.662.219.984z"/></svg></span>
         <span><b>Cuida tus equipos</b><small>Servicio técnico y soporte</small></span>
         <svg class="go" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
       </a>
-      <a class="path" href="software/">
+      <a class="path glow reveal" style="--d:2" href="software/">
         <span class="ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
         <span><b>Digitaliza tu operación</b><small>Software a la medida</small></span>
         <svg class="go" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
@@ -99,7 +141,7 @@
   <!-- Soluciones -->
   <section class="band">
     <div class="wrap">
-      <div class="band-head">
+      <div class="band-head reveal">
         <div>
           <span class="kicker">Soluciones para cada necesidad</span>
           <h2 class="h2">La tecnología correcta.<br>El respaldo que necesitas.</h2>
@@ -109,7 +151,7 @@
         </a>
       </div>
       <div class="cards">
-        <a class="card reveal" href="productos/">
+        <a class="card glow tilt reveal" style="--d:0" href="productos/">
           <div class="card-visual"><span class="num">01</span><img src="assets/img/portatiles.jpg" alt="Computador portátil abierto" loading="lazy" width="1000" height="1250"></div>
           <div class="card-body">
             <small>Computadores</small>
@@ -117,7 +159,7 @@
             <p>Equipos para oficina, estudio y trabajo profesional. Te ayudamos a elegir memoria, almacenamiento y procesador.</p>
           </div>
         </a>
-        <a class="card reveal" href="productos/">
+        <a class="card glow tilt reveal" style="--d:1" href="productos/">
           <div class="card-visual"><span class="num">02</span><img src="assets/img/escritorio.jpg" alt="Computador de escritorio con monitor, teclado y mouse" loading="lazy" width="1000" height="689"></div>
           <div class="card-body">
             <small>Computadores</small>
@@ -125,7 +167,7 @@
             <p>Configuraciones para puestos de trabajo, puntos de venta y tareas de alto rendimiento.</p>
           </div>
         </a>
-        <a class="card reveal" href="productos/">
+        <a class="card glow tilt reveal" style="--d:2" href="productos/">
           <div class="card-visual"><span class="num">03</span><img src="assets/img/impresoras.jpg" alt="Impresora de inyección de tinta" loading="lazy" width="1000" height="666"></div>
           <div class="card-body">
             <small>Impresión</small>
@@ -144,7 +186,7 @@
       <div class="brand-art reveal">
         <img src="sun-brand.png" alt="Identidad de Sun Computer: un sol tecnológico con conexiones electrónicas" width="1476" height="557" loading="lazy">
       </div>
-      <div class="brand-bottom">
+      <div class="brand-bottom reveal">
         <p>Conectamos ideas.<br><b>Hacemos posibles soluciones.</b></p>
         <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
       </div>
@@ -155,12 +197,12 @@
   <section class="band ground">
     <div class="wrap soft-grid">
       <div>
-        <span class="kicker">Software que trabaja contigo</span>
-        <h2 class="h2">Tu negocio tiene su forma de trabajar. Tu software <span class="led">también debería.</span></h2>
-        <p class="lead">Transformamos procesos de ventas, inventarios y servicios en herramientas que tu equipo puede usar todos los días.</p>
+        <span class="kicker reveal">Software que trabaja contigo</span>
+        <h2 class="h2 reveal" style="--d:1">Tu negocio tiene su forma de trabajar. Tu software <span class="led">también debería.</span></h2>
+        <p class="lead reveal" style="--d:2">Transformamos procesos de ventas, inventarios y servicios en herramientas que tu equipo puede usar todos los días.</p>
         <a class="btn btn-ground" href="software/">Conocer soluciones de software</a>
       </div>
-      <div class="window reveal">
+      <div class="window glow reveal">
         <div class="window-bar" aria-hidden="true"><i></i><i></i><i></i><span>sun / software</span></div>
         <div class="caps">
           <a class="cap" href="software/"><span class="n">01</span><div><h3>Ventas y facturación</h3><p>Organiza tu operación comercial.</p></div><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></a>
@@ -176,8 +218,8 @@
   <section class="band frost">
     <div class="wrap exp-grid">
       <div>
-        <span class="kicker">Más allá de los equipos</span>
-        <h2 class="h2">Entendemos la tecnología.<br><span class="led">Entendemos tu negocio.</span></h2>
+        <span class="kicker reveal">Más allá de los equipos</span>
+        <h2 class="h2 reveal" style="--d:1">Entendemos la tecnología.<br><span class="led">Entendemos tu negocio.</span></h2>
         <p>Integramos suministro, soporte, desarrollo y formación para acompañar a empresas y organizaciones en sus proyectos tecnológicos.</p>
         <a class="chip" href="experiencia/">Conoce nuestra experiencia
           <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -197,7 +239,7 @@
   <div class="wrap">
     <div class="footer-main">
       <div>
-        <img src="sun-logo-light.png" alt="Sun Computer" width="466" height="230" loading="lazy">
+        <img src="assets/img/logo/sun-logo-web.png" alt="Sun Computer" width="520" height="201" loading="lazy">
         <p>Soluciones que conectan tu empresa<br>con lo que viene.</p>
       </div>
       <div>
@@ -227,16 +269,5 @@
   </div>
 </footer>
 
-<script>
-/* Aparición suave al hacer scroll (solo presentación) */
-(function () {
-  var els = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) { els.forEach(function (e) { e.classList.add('in'); }); return; }
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
-  }, { rootMargin: '0px 0px -8% 0px' });
-  els.forEach(function (e) { io.observe(e); });
-})();
-</script>
 </body>
 </html>

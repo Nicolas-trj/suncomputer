@@ -205,7 +205,7 @@ a, button { transition: color .3s ease-out, background-color .3s ease-out, borde
 .card-visual { position: relative; aspect-ratio: 4 / 3; overflow: hidden; background: var(--ground); }
 .card-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s var(--ease); }
 .card:hover .card-visual img { transform: scale(1.04); }
-.card-visual .num {
+.card-visual .num { z-index: 3;
   position: absolute; top: 14px; left: 14px; padding: 3px 10px; border-radius: var(--r-pill);
   background: rgba(2, 5, 12, .7); color: var(--lead); font: 500 12px/1.4 var(--mono);
   -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
@@ -287,10 +287,76 @@ footer { background: var(--void); border-top: 1px solid var(--hairline); color: 
 .toast a { color: var(--led); }
 .toast button { padding: 6px 12px; border-radius: var(--r-pill); border: 1px solid var(--circuit); font-size: 13px; }
 
-/* ---------- Aparición suave ---------- */
-@media (prefers-reduced-motion: no-preference) {
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
-  .reveal.in { opacity: 1; transform: none; }
+/* ---------- Animaciones (sutiles) ---------- */
+
+/* Entradas al hacer scroll — solo si JS está activo */
+.motion-ready .reveal {
+  opacity: 0; transform: translateY(28px); filter: blur(4px);
+  transition: opacity .9s var(--ease), transform .9s var(--ease), filter .9s var(--ease);
+  transition-delay: calc(var(--d, 0) * 90ms);
+}
+.motion-ready .reveal.in { opacity: 1; transform: none; filter: none; }
+
+/* Logo SUN animado */
+.power { position: relative; width: 84px; height: 84px; margin: 0 auto 28px; }
+.power::before {
+  content: ""; position: absolute; inset: -40%; border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(0, 229, 255, .35), rgba(0, 54, 160, .15) 55%, transparent);
+  animation: halo 4.5s ease-in-out 2.4s infinite;
+  opacity: 0;
+}
+.power svg { position: relative; width: 100%; height: 100%; overflow: visible; }
+.p-ring { fill: none; stroke: url(#metal); stroke-width: 7; stroke-linecap: round;
+  stroke-dasharray: 80 100; stroke-dashoffset: 80; animation: draw 1.6s var(--ease) .2s forwards; }
+.p-bar { stroke: var(--phosphor); stroke-width: 8; stroke-linecap: round;
+  stroke-dasharray: 100; stroke-dashoffset: 100;
+  animation: draw .7s var(--ease) 1.2s forwards, ignite .6s ease-out 1.8s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes ignite { to { stroke: var(--led); filter: drop-shadow(0 0 6px rgba(0, 229, 255, .8)); } }
+@keyframes halo { 0%, 100% { opacity: .35; transform: scale(.92); } 50% { opacity: .85; transform: scale(1.05); } }
+
+/* Fondo vivo: circuitos con pulsos */
+.circuits { position: absolute; top: 0; left: 0; width: 100%; height: 50vw; max-height: 820px; min-height: 560px; pointer-events: none;
+  -webkit-mask-image: linear-gradient(to right, #000 8%, transparent 27%, transparent 73%, #000 92%); mask-image: linear-gradient(to right, #000 8%, transparent 27%, transparent 73%, #000 92%); }
+.c-lines { fill: none; stroke: #1b2b48; stroke-width: 1.2; }
+.c-dots { fill: #24395e; }
+.c-pulses path { fill: none; stroke: var(--led); stroke-width: 1.6; stroke-linecap: round;
+  stroke-dasharray: 60 1000; stroke-dashoffset: 1060; opacity: .9;
+  animation: pulse 7s linear infinite; animation-delay: var(--t, 0s); }
+@keyframes pulse { 0% { stroke-dashoffset: 60; opacity: 0; } 8% { opacity: .9; } 70% { opacity: .9; } 100% { stroke-dashoffset: -1000; opacity: 0; } }
+@media (max-width: 880px) { .circuits { opacity: .55; } }
+
+/* Brillo cian que sigue al cursor */
+.glow { position: relative; isolation: isolate; }
+.glow::after {
+  content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none; border-radius: inherit;
+  background: radial-gradient(320px circle at var(--mx, 50%) var(--my, 50%), rgba(0, 229, 255, .10), transparent 60%);
+  opacity: 0; transition: opacity .4s ease-out;
+}
+.glow:hover::after { opacity: 1; }
+
+/* Inclinación 3D */
+.tilt { transform-style: preserve-3d; will-change: transform; }
+.motion-ready .tilt.in { transition: opacity .9s var(--ease), transform .25s ease-out, filter .9s var(--ease), border-color .3s ease-out; }
+
+/* Botón LED: pequeño brillo al pasar */
+.btn-led, .quote-link { position: relative; overflow: hidden; }
+.btn-led::before, .quote-link::before {
+  content: ""; position: absolute; top: 0; left: -60%; width: 40%; height: 100%;
+  background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .55), transparent);
+  transform: skewX(-20deg); transition: left .6s var(--ease);
+}
+.btn-led:hover::before, .quote-link:hover::before { left: 120%; }
+
+/* Hero: foto entra con zoom suave */
+.hero-visual img { transition: transform 1.6s var(--ease); }
+.motion-ready .hero-visual:not(.in) img { transform: scale(1.06); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  .p-ring, .p-bar { stroke-dashoffset: 0; }
+  .p-bar { stroke: var(--led); }
+  .c-pulses { display: none; }
 }
 
 /* ---------- Responsive ---------- */
